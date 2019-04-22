@@ -1,4 +1,5 @@
 export interface IAppStore {
-    count: number;
+    autoCompletionList: string[] | null;
+    searchList: string[] | null,
     router: any,
 }

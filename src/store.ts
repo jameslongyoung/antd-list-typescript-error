@@ -1,6 +1,9 @@
 import { combineReducers, Store, Reducer } from 'redux'
 import {IAppStore} from './storeDefine';
-import {countReducer} from './entry/reducers/index'
+import {
+    searchListReducer,
+    searchAutoCompletionListReducer
+} from './entry/reducers/index'
 import { configureStore } from './services/store/configureStore';
 import { createBrowserHistory } from 'history'
 import { connectRouter } from 'connected-react-router'
@@ -13,7 +16,8 @@ export type ICombineReducerObj<T>  = {
 export const rootStoreFactory = (): Store<IAppStore> => {
     const StoreShapeInitState = {} as IAppStore;
     const reducerObj: ICombineReducerObj<IAppStore> = {
-        count: countReducer,
+        searchList: searchListReducer,
+        autoCompletionList: searchAutoCompletionListReducer,
         router: connectRouter(history),
     };
     const rootReducer = combineReducers<IAppStore>(reducerObj);

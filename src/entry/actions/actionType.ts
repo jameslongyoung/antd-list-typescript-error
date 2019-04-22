@@ -1,0 +1,2 @@
+export const onSearchQuestionActionSuccess = 'onSearchQuestionActionSuccess'
+export const onSearchAutoCompleteListActionSuccess = 'onSearchAutoCompleteListActionSuccess'
